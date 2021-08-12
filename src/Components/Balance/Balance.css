@@ -1,0 +1,41 @@
+h3{
+    text-align: center;
+}
+h5{
+    margin-bottom: 0;
+}
+h2{
+    margin-top: 0;
+}
+
+.income h3{
+    margin-top: 0;
+    color: #00eeaa;
+}
+
+.expense h3{
+    margin-top: 0;
+    color: #ff0000;
+}
+
+.income{
+    box-shadow: 5px 5px 10px #888888;
+    float: left;
+    width:50%;
+    text-align: center;
+    /* border: 0.1px solid black; */
+    border-radius: 2px;
+    border-right:1px solid #333333;
+    height: 10vh;
+    background-color: white;
+}
+.expense{
+    float: left;
+    box-shadow: 5px 5px 10px #888888;
+    border-radius: 2px;
+    width:49%;
+    text-align: center;
+    /* border: 0.5px solid black; */
+    height: 10vh;   
+    background-color: white;
+}
