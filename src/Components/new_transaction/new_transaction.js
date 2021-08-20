@@ -1,35 +1,32 @@
 import './newc.css';
+import React, { useState,useRef } from 'react';
 
-const new_transaction = props =>{
+const New_transaction = props =>{
 
-    let nme,cost;
+    const nme  = useRef();
+    const cost = useRef();
     const addNme = event =>{
         event.preventDefault();
-        console.log(nme);
-        console.log(cost);
-        const evnt= {type:nme,cost:cost};
-        props.change(evnt);
-    }
-
-    const namechg =(event) =>{
-        nme = event.target.value;
-    }
-    const costchg = event =>{
-        cost = parseInt(event.target.value);
+        const name = nme.current.value;
+        const cst = parseInt(cost.current.value);
+        const evnt= {type:name,cost:cst};
+        if(name!=""||cst!="")props.change(evnt);
+        nme.current.value="";
+        cost.current.value="";
     }
 
     return(
         <div className="new">
             <h4>Add New Transaction</h4><hr/>
-            <form>
+            <form onSubmit={addNme}>
                 <h5>Text</h5>
-                <input type="text" name="name" onChange={namechg}/>
+                <input type="text" name="name" ref={nme}/>
                 <h5>Amount</h5>
-                <input type="number" name="cost" onChange={costchg}/>
-                <button onClick={addNme}>Submit</button>
+                <input type="number" name="cost" ref={cost}/>
+                <button>Submit</button>
             </form>
         </div>
     );
 }
 
-export default new_transaction;
+export default New_transaction;

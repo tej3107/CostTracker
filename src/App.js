@@ -2,7 +2,7 @@ import { Component } from 'react';
 import './App.css';
 import Data from './Components/Data/data';
 import Balance from './Components/Balance/Balance';
-import New from './Components/new_transaction/new_transaction';
+import New from './Components/new_transaction/New_transaction';
 
 class App extends Component {
 
